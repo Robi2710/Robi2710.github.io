@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="author" content="Roberto Baciu">
+        <meta name="description" content="News based on your political preferences">
+        <meta name="keywords" content="politics,political compass,news,elections">
+        <link rel="stylesheet" href="politic.css" type="text/css">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>My Political Preferences</title>
+    </head>
+    <body>
+        <header>
+            <h1>My Political Preferences</h1>
+            <p>Complete the survey to find out your political profile.</p>
+        </header>
+        <section class="intro">
+            <a href="survey.html" class="button">Begin the survey</a>
+        </section>
+        <script>
+            // Check if user is logged in
+            if (!localStorage.getItem('isLoggedIn')) {
+                window.location.href = 'intro.html';
+            }
+        </script>
+    </body>
+</html>

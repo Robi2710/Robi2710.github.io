@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Political Compass Test - Welcome</title>
+    <link rel="stylesheet" href="intro.css">
+</head>
+<body>
+    <div class="container">
+        <div id="auth-toggle">
+            <button onclick="toggleAuth('login')" class="toggle-btn active" id="login-toggle">Login</button>
+            <button onclick="toggleAuth('register')" class="toggle-btn" id="register-toggle">Register</button>
+        </div>
+        
+        <div id="login-section">
+            <h2>Login</h2>
+            <form id="login-form">
+                <input type="text" id="username" placeholder="Username" required>
+                <input type="password" id="password" placeholder="Password" required>
+                <button type="submit">Login</button>
+            </form>
+            <p id="login-message"></p>
+        </div>
+
+        <div id="register-section" style="display: none;">
+            <h2>Register</h2>
+            <form id="register-form">
+                <input type="text" id="reg-username" placeholder="Username" required>
+                <input type="password" id="reg-password" 
+                    placeholder="Password" 
+                    pattern="^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$"
+                    title="Password must contain at least 8 characters, including one letter, one number and one special character"
+                    required>
+                <div class="password-requirements">
+                    Password must contain:
+                    <ul>
+                        <li>At least 8 characters</li>
+                        <li>At least one letter</li>
+                        <li>At least one number</li>
+                        <li>At least one special character (@$!%*#?&)</li>
+                    </ul>
+                </div>
+                <input type="password" id="reg-confirm-password" placeholder="Confirm Password" minlength="6" required>
+                <button type="submit">Register</button>
+            </form>
+            <p id="register-message"></p>
+        </div>
+
+        <div id="welcome-section" style="display: none;">
+            <h1>Welcome to the Political Compass Test</h1>
+            <div class="content">
+                <p>Discover your political orientation through a series of questions.</p>
+                <p>This test will help you understand where you stand on both economic and social issues.</p>
+            </div>
+            <div class="button-container">
+                <button onclick="window.location.href='politic.html'">Start Test</button>
+                <button onclick="logout()" class="logout-btn">Logout</button>
+            </div>
+        </div>
+    </div>
+    <script src="js/auth.js"></script>
+</body>
+</html>

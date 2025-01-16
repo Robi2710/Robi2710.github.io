@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Roberto Baciu">
+    <meta name="description" content="News based on your political preferences">
+    <meta name="keywords" content="politics,political compass,news,elections">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="mainpage.css" type="text/css">
+    <title>My Political Preferences</title>
+</head>
+<body>
+    <header>
+        <h1>My Political Preferences</h1>
+        <nav class="nav-container">
+            <div class="user-info">
+                <span id="username-display">Welcome, Guest</span>
+            </div>
+            <div class="nav-buttons">
+                <a href="#welcome" class="nav-button">Home</a>
+                <a href="#political-compass" class="nav-button">Political Compass</a>
+                <div class="dropdown">
+                    <button class="menu-toggle" onclick="toggleMenu()">Menu</button>
+                    <div class="dropdown-content menu">
+                        <a href="politician.html">Politicians</a>
+                        <a href="politicalparties.html">Political Parties</a>
+                        <a href="#" onclick="logout()" class="logout-link">Logout</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section id="welcome">
+            <h2 >Welcome to My Political Preferences</h2>
+            <p>Here you can find information about politicians, political parties, and the latest news based on your political views .</p>
+        </section>
+        <section id="political-compass">
+            <p>Here is the political compass. You can be situated in 4 main areas based on the xOy sysyem. The 4 main regions are:</p>
+            <ul>
+                <li>Left-Authoritarian</li>
+                <li>Right-Authoritarian</li>
+                <li>Left-Libertarian</li>
+                <li>Right-Libertarian</li>
+            </ul>
+            <img src="Political_Compass_purple_LibRight.svg.png" alt="Political Compass" class="responsive-img">
+            <div class="card-container">
+                <div class="card">
+                    <h3>Left-Authoritarian</h3>
+                    <p>Left-Authoritarian politicians are those who believe in a strong government that controls the economy and society. They are in favor of social programs and regulations that protect the environment and workers.</p>
+                </div>
+                <div class="card">
+                    <h3>Right-Authoritarian</h3>
+                    <p>Right-Authoritarian politicians believe in a strong, centralized government that enforces strict laws and regulations to maintain order and control. They often support traditional values and may prioritize national security and economic stability over individual freedoms.</p>
+                </div>
+                <div class="card">
+                    <h3>Right-Libertarian</h3>
+                    <p>Right-Libertarian politicians advocate for minimal government intervention in both personal and economic matters. They believe in individual liberty, free-market capitalism, and limited government. They often support lower taxes, deregulation, and privatization of public services.</p>
+                </div>
+                <div class="card">
+                    <h3>Left-Libertarian</h3>
+                    <p>Left-Libertarian politicians emphasize social equality and individual freedom. They advocate for a decentralized government and believe in reducing the power of large corporations and the state. They support social justice, environmental sustainability, and workers' rights.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 My Political Preferences. All rights reserved.</p>
+    </footer>
+    <script src="mainpage.js"></script>
+    <script src="js/auth.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            if (!localStorage.getItem('isLoggedIn')) {
+                window.location.href = 'intro.html';
+            } else {
+                const username = localStorage.getItem('username');
+                document.getElementById('username-display').textContent = `Welcome, ${username}`;
+            }
+        });
+
+        function toggleMenu() {
+            const menu = document.querySelector('.menu');
+            menu.classList.toggle('active');
+        }
+
+        function logout() {
+            localStorage.removeItem('isLoggedIn');
+            localStorage.removeItem('username');
+            window.location.href = 'intro.html';
+        }
+    </script>
+</body>
+</html>
