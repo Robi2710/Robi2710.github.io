@@ -1,7 +1,7 @@
 # Political Site 
 
 Site web interactiv care îți permite să completezi un chestionar de tip Political Compass pentru a-ți determina poziția politică. Pe baza rezultatului tău, vei primi recomandări personalizate de politicieni, partide și surse de știri care se aliniază cu opiniile tale.
-Site-ul poate fi accesat [aici](Robi2710.github.io) .
+Site-ul poate fi accesat [aici](https://robi2710.github.io/) .
 
 ## Funcționalități
 
